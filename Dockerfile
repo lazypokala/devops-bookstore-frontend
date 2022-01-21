@@ -10,7 +10,8 @@ RUN pwd
 RUN ls
 RUN npm run build
 
-# production environment
+ #production environment
+EXPOSE 80
 FROM nginx:1.21.0-alpine
 # Copy built source code into Nginx directory
 COPY --from=build /build /usr/share/nginx/html
